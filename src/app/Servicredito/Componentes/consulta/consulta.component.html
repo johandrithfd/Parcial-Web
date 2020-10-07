@@ -1,0 +1,33 @@
+<div class="container centrar">
+    <h2>Consulta de Creditos </h2>
+    <br><br>
+    <div class="card espacio">
+        <div class="card-body">
+            <table class="table table-striped thead-dark" *ngIf='personas && personas.length'>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Cedula</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Capital Inicial</th>
+                        <th scope="col">Tiempo (meses)</th>
+                        <th scope="col">Tasa Interes</th>
+                        <th scope="col">Capital Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let persona of personas; index as i ">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{persona.identificacion}}</td>
+                        <td>{{persona.nombre}}</td>
+                        <td>{{persona.capital}}</td>
+                        <td>{{persona.tiempo * 12}}</td>
+                        <td>{{persona.tasaInteres}}%</td>
+                        <td>{{persona.capitalFinal}}</td>
+                    </tr>
+                </tbody>
+                </table>
+        </div>
+    </div>
+    
+</div>

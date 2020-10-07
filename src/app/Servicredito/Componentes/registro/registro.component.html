@@ -1,0 +1,51 @@
+<br>
+<div class="main row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form novalidate name="form"  ngSubmit="onSubmit()" #f="ngForm">
+                    <div class="card espacio">
+                        <div class="card-body">
+                            <h5>Datos del cliente</h5>
+                        </div>
+                    </div>
+                    <div class="form-gruop">
+                        <label>Nombre del cliente </label>
+                        <input type="text" name="nombre" [(ngModel)]= "persona.nombre" class="form-control" placeholder="nombre ejemplo" ngModel required>
+                    </div>
+                    <div class="form-gruop">
+                        <label>Identificacion del cliente </label>
+                        <input type="text" name="identificacion" [(ngModel)] = "persona.identificacion" class="form-control" placeholder="id ejemplo" ngModel required>
+                    </div>                                   
+                    <div class="card espacio">
+                        <div class="card-body">
+                            <h5>Datos del credito</h5>
+                        </div>
+                    </div>
+                    <div class="form-gruop">
+                        <label>Capital inicial</label>
+                        <input type="number" name="capital" [(ngModel)]= "persona.capital" class="form-control" placeholder="000000$" ngModel required>
+                    </div>
+                    <div class="form-gruop">
+                        <label>Digite la tasa de interes en porcentanje </label>
+                        <input type="number" name="tasaInteres" [(ngModel)]= "persona.tasaInteres" class="form-control" placeholder="10%" ngModel required>
+                    </div>
+                    <div class="form-gruop">
+                        <label>Digite el periodo de tiempo (meses)</label>
+                        <input type="number" name="tiempo" [(ngModel)] = "persona.tiempo" class="form-control" placeholder="id ejemplo" ngModel required>
+                    </div>
+                    <div class="form-gruop">
+                        <label>Capital Final</label>
+                        <input type="number" name="capital" class="form-control" value="{{persona.capitalFinal}}">
+                    </div>
+                    <br>
+                    <div class="form-gruop">
+                        <button type="submit" class="btn btn-primary" (click) = "addPersona()" [disabled]="f.invalid"> Registrar Persona </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
